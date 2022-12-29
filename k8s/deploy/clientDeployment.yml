@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: echoclient
+  labels:
+    app: echoclient
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: echoclient
+  template:
+    metadata:
+      labels:
+        app: echoclient
+    spec:
+      containers:
+      - name: echoclient
+        image: client:latest
+        ports:
+        - containerPort: 9898
+        imagePullPolicy: IfNotPresent 

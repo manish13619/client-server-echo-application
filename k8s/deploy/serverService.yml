@@ -1,0 +1,11 @@
+kind: Service 
+apiVersion: v1 
+metadata:
+  name: echoserver 
+spec:
+  type: ClusterIP
+  selector:
+    app: echoserver 
+  ports:
+  - port: 9898 
+    targetPort: 9898
